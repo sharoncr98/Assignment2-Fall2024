@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #EDE6DB;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #8b4500;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 110px;
+    width: auto;
+}
+.desktop-menu menu {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+}
+.desktop-menu a {
+    text-decoration: none;
+    color: #fefefe;
+    font-size: 20px;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+.desktop-menu a:hover {
+    color: #EDE6DB;
+}
+
