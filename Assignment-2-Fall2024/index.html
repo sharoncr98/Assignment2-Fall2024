@@ -7,6 +7,10 @@
     <meta name="description" content="Assignment 2 - Sharon Chrysler">
     <meta name="robots" content="noindex, nofollow">
     <title>Assignment 2 | Sharon Chrysler</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Poiret+One&display=swap" rel="stylesheet">
    <!-- Css file -->
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
@@ -26,11 +30,61 @@
         </nav>
     </header>
 <main>
+    <!-- section that contains the product pictures and description -->
+    <section class="products">
+        <h1>Taste the most amazing chocolate snack ever existed</h1>
 
+        <div class="product-container">
+            <!-- Product Picture 1 -->
+            <div class="product">
+                <img src="./IMG/KinderBueno2.jpg" alt="KinderBueno2">
+                <p class="description">Kinder Bueno is a unique chocolatey and hazelnut cream candy bar with a taste experience that defies expectation.</p>
+            </div>
 
+            <!-- Product Picture 2 -->
+            <div class="product">
+                <img src="./IMG/KinderBueno1.jpg" alt="KinderBueno1">
+                <p class="description">Beneath a blanket of smooth milk chocolate lies a thin, crispy wafer filled with a creamy hazelnut filling, all topped with a delicate, dark chocolate drizzle.</p>
+            </div>
+
+            <!-- Product Picture 3 -->
+            <div class="product">
+                <img src="./IMG/KinderBuenoSplit.jpg" alt="KinderBuenoSplit">
+                <p class="description">Both individually wrapped Kinder Bueno bars are satisfying but not heavy, with a texture that is anything but expected.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Svg button -->
+    <section class="taste-me-section">
+        <!-- Taste Me button without a div wrapper or button class -->
+        <button>
+            <svg class="taste-me-svg" width="50" height="50">
+                <!-- Removed the rectangle -->
+            </svg>
+            <p>Taste Me!</p>
+        </button>
+    </section>
 </main>
 <footer>
+        <div class="footer-container">
+            <!-- Company Information Section -->
+            <div class="footer-info">
+                <img src="./IMG/ChocolateLogo.jpg" alt="Company Logo" class="footer-logo">
+                <p>For any questions, suggestions or sweet desires - we are here for you!</p>
+                <p>2024 Chocolate Factory</p>
+            </div>
 
+            <!-- Quick Contact Form Section -->
+            <div class="footer-contact">
+                <h3>Lets Talk</h3>
+                <form action="#" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message"  placeholder="Type your message..." required></textarea>
+                    <button type="submit">Talk To Us!</button>
+                </form>
+            </div>
+        </div>
 </footer>
 </body>
 </html>
