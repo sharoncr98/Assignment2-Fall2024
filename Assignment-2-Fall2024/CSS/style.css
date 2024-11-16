@@ -2,7 +2,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #EDE6DB;
+    /*i used the gradient color generator to create the correct color scheme */
+    background: rgb(237,230,219);
+    background: radial-gradient(circle, rgba(237,230,219,1) 0%, rgba(121,82,9,1) 100%, rgba(139,69,0,0.9473039215686274) 100%);
+    font-family: "Poiret One", serif;
+
 }
 header{
     display: flex;
@@ -10,6 +14,7 @@ header{
     align-items: center;
     padding: 10px 20px;
     background-color: #8b4500;
+
 }
 .logo-container {
     display: flex;
@@ -18,6 +23,10 @@ header{
 .logo img {
     height: 110px;
     width: auto;
+}
+.logo-container:hover img {
+    transform: rotate(-15deg) scale(0.9); /* Rotate and scale the logo */
+    transition: transform 0.5s ease-in-out;
 }
 .desktop-menu menu {
     display: flex;
@@ -33,5 +42,254 @@ header{
 }
 .desktop-menu a:hover {
     color: #EDE6DB;
+}
+
+/** Products Css **/
+section, .products {
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.products h1 {
+    font-family: "Emilys Candy", serif;
+    font-size: 2.7rem;
+    margin-bottom: 30px;
+    color: #8b4500;
+    display: flex; /* Use flex instead of inline-block */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: color 0.5s ease, transform 0.5s ease, text-shadow 0.5s ease;
+}
+
+/* Grid Layout for Products */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    font-family: "Emilys Candy", serif;
+
+    max-width: 1200px;
+    margin: 0 auto; /* Center the grid */
+}
+
+.product {
+    text-align: center; /* Center content in each product div */
+    margin-bottom: 30px; /* Adds space below each product */
+    margin-right: 20px;
+}
+
+.product img {
+    width: 100%;
+    height: 300px;
+    transition: transform 0.3s ease, opacity 0.3s ease;/* Animation effect */
+}
+
+.product .description {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #8b4500;
+}
+.products h1:hover {
+    color: #EDE6DB; /* Light cream color when "melted" */
+    transform: scale(1.05); /* Slight scale-up for emphasis */
+    text-shadow: none;
+}
+
+/* Simulate dripping chocolate using the ::after pseudo-element */
+.products h1::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to top, #8b4500 0%, #EDE6DB 100%);
+    transform: scaleY(0);
+    transition: transform 0.4s ease; /* Animate the melting */
+}
+
+
+/* Hover Effects for Images */
+.product:nth-child(1) img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.product:nth-child(2) img:hover {
+    opacity: 0.9; /* Slight fade effect */
+}
+
+.product:nth-child(3) img:hover {
+    transform: scale(0.95); /* Slight rotation effect */
+}
+/* Wrapper div for the Taste Me button */
+.taste-me-section {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the Taste Me button directly */
+.taste-me-section button {
+    background-color: #8b4500; /* Default background color (rich brown) */
+    border: 2px solid #8b4500; /* Default border color (light cream) */
+    color: #EDE6DB; /* Default text color (light cream) */
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: "Emilys Candy", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.7s ease, border-color 0.7s ease, transform 0.5s ease;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    text-align: center; /* Ensure the text is centered */
+}
+
+/* Styling for the SVG icon inside the button */
+.taste-me-section .taste-me-svg {
+    width: 20px; /* Add width for visibility */
+    height: 20px; /* Add height for visibility */
+    margin-right: 10px; /* Space between SVG and text */
+    fill: none; /* No fill color since there is no rectangle */
+    stroke: #EDE6DB; /* Set the stroke color to the light cream */
+    stroke-width: 2px; /* Stroke width for the SVG */
+    opacity: 0.7; /* Reduced opacity */
+    transition: transform 0.8s ease;
+}
+
+/* Hover Effect on Button */
+.taste-me-section button:hover {
+    background-color: #EDE6DB; /* Change background to light cream on hover */
+    border-color: #8b4500; /* Change border to rich brown on hover */
+    color: #8b4500; /* Change text color to rich brown on hover */
+}
+
+/* Click Effect on Button */
+.taste-me-section button:active {
+    transform: scale(0.95); /* Slight scale down on click */
+}
+
+/* Hover effect for SVG icon inside the button */
+.taste-me-section button:hover .taste-me-svg {
+    transform: translateX(5px); /* Move the SVG icon slightly on hover */
+}
+footer {
+    background-color: #8b4500; /* Dark chocolate color */
+    color: #EDE6DB; /* Light cream color */
+    padding: 10px 20px;
+    display: flex;
+    font-family: "Poiret One", serif;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-info,
+.footer-contact {
+    width: 45%;
+    margin-bottom: 10px;
+}
+
+.footer-info img.footer-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footer-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Quick Contact Form Styling */
+.footer-contact h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #EDE6DB; /* Light cream for contrast */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    font-family: "Poiret One", serif;
+    border: 2px solid #EDE6DB;
+    border-radius: 5px;
+    background-color: #EDE6DB;
+    color: #8b4500;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #8b4500;
+
+}
+
+.contact-form button {
+    background-color: #EDE6DB;
+    color: #8b4500;
+    font-family: "Poiret One", serif;
+    padding: 12px 20px;
+    border: #8b4500;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.contact-form button:hover {
+    background-color: #8b4500;
+    color: #EDE6DB;
+    font-family: "Emilys Candy", serif;
+}
+/* Mobile responsiveness (for smaller screens) */
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: 1fr; /* Stacks products on top of each other */
+    }
+
+    .products h1 {
+        font-size: 2rem; /* Adjust heading size for mobile */
+    }
+    /* Adjust spacing for mobile */
+    .product {
+        margin-bottom: 20px;
+    }
+
+    /* Make images smaller on mobile */
+    .product img {
+        height: 200px; /* Adjust image height for mobile */
+    }
+
+    /* Make button smaller on mobile */
+    .taste-me-section button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+    .footer-info,
+    .footer-contact {
+        width: 100%;
+    }
 }
 
